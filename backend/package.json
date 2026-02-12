@@ -1,0 +1,38 @@
+{
+  "name": "employee-management-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Employee Management System",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --coverage --detectOpenHandles",
+    "test:watch": "jest --watch",
+    "test:integration": "jest tests/integration",
+    "test:unit": "jest tests/unit",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix"
+  },
+  "keywords": ["employee", "management", "api"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3",
+    "nodemon": "^2.0.22",
+    "eslint": "^8.40.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": ["/node_modules/"],
+    "collectCoverageFrom": ["src/**/*.js"],
+    "testMatch": ["**/tests/**/*.test.js"]
+  }
+}
