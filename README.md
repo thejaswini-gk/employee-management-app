@@ -103,7 +103,7 @@ The Employee Management System is a modern web application designed to streamlin
          ▼
 ┌─────────────────┐
 │ Express Backend │
-│  (Port 5000)    │
+│  (Port 3001)    │
 └────────┬────────┘
          │ SQL
          ▼
@@ -164,16 +164,16 @@ The Employee Management System is a modern web application designed to streamlin
 
    Or run them separately:
    ```bash
-   # Terminal 1: Backend (http://localhost:5000)
-   npm run dev:backend
+   # Terminal 1: Backend (http://localhost:3001)
+   cd backend && npm start
    
    # Terminal 2: Frontend (http://localhost:3000)
-   npm run dev:frontend
+   cd frontend && npm start
    ```
 
 5. **Access the application**
    - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000/api
+   - Backend API: http://localhost:3001/api
 
 ---
 
@@ -181,7 +181,7 @@ The Employee Management System is a modern web application designed to streamlin
 
 ### Base URL
 ```
-http://localhost:5000/api
+http://localhost:3001/api
 ```
 
 ### Endpoints
@@ -197,7 +197,7 @@ GET /api/employees
 
 **Example:**
 ```bash
-curl "http://localhost:5000/api/employees?search=john&department=Engineering"
+curl "http://localhost:3001/api/employees?search=john&department=Engineering"
 ```
 
 **Response:**
@@ -227,7 +227,7 @@ GET /api/employees/:id
 
 **Example:**
 ```bash
-curl http://localhost:5000/api/employees/1
+curl http://localhost:3001/api/employees/1
 ```
 
 ---
@@ -257,7 +257,7 @@ POST /api/employees
 
 **Example:**
 ```bash
-curl -X POST http://localhost:5000/api/employees \
+curl -X POST http://localhost:3001/api/employees \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Jane Smith",
@@ -279,7 +279,7 @@ PUT /api/employees/:id
 
 **Example:**
 ```bash
-curl -X PUT http://localhost:5000/api/employees/1 \
+curl -X PUT http://localhost:3001/api/employees/1 \
   -H "Content-Type: application/json" \
   -d '{
     "name": "John Doe Updated",
@@ -299,7 +299,7 @@ DELETE /api/employees/:id
 
 **Example:**
 ```bash
-curl -X DELETE http://localhost:5000/api/employees/1
+curl -X DELETE http://localhost:3001/api/employees/1
 ```
 
 ---
@@ -483,7 +483,7 @@ docker-compose up -d
 **Backend (.env)**
 ```bash
 NODE_ENV=production
-PORT=5000
+PORT=3001
 DATABASE_PATH=./database/employees.db
 CORS_ORIGIN=https://yourdomain.com
 RATE_LIMIT_WINDOW_MS=900000
@@ -502,14 +502,17 @@ REACT_APP_ENV=production
 
 ## 🎨 Screenshots
 
-### Employee Dashboard
-![Dashboard](./docs/screenshots/dashboard.png)
+### All Employees View
+![All Employees](https://github.com/user-attachments/assets/421bb3e1-0c4c-48a8-a6e1-4f7a91d62875)
 
-### Add/Edit Employee Form
-![Form](./docs/screenshots/form.png)
+### Search by Name
+![Search by Name](https://github.com/user-attachments/assets/8b0ebc43-620f-4150-b2cb-ea3b6471dc6e)
 
-### Search and Filter
-![Search](./docs/screenshots/search.png)
+### Filter by Department
+![Filter by Department](https://github.com/user-attachments/assets/0a13caa1-779c-4999-9ee0-5efcd9c386e1)
+
+### Combined Search & Filter
+![Combined](https://github.com/user-attachments/assets/715e5e1f-0dd6-4631-ac25-7f182118fc0f)
 
 ---
 
